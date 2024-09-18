@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayanth T M - Pixel Perfect Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        :root {
+            --bg-color: #7fc9ff;
+            --text-color: #2c1e17;
+            --accent-color: #e86f51;
+            --secondary-color: #8bcb5e;
+            --tertiary-color: #f3b942;
+            --light-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background: linear-gradient(to bottom, var(--bg-color), #b0e0ff);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: var(--secondary-color);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--text-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            text-shadow: 2px 2px 0 var(--tertiary-color);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 10px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 2px solid var(--text-color);
+            background-color: var(--tertiary-color);
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: var(--tertiary-color);
+        }
+
+        section {
+            padding: 60px 20px;
+            background-color: var(--light-bg);
+            margin: 20px 0;
+            border: 4px solid var(--text-color);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 0 var(--text-color);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: 2px solid var(--text-color);
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background-color: var(--text-color);
+            color: var(--tertiary-color);
+            transform: scale(1.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--tertiary-color);
+            border: 3px solid var(--text-color);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: var(--accent-color);
+            color: var(--tertiary-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--text-color);
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            background-color: var(--text-color);
+            color: var(--tertiary-color);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            padding: 10px;
+            background-color: var(--tertiary-color);
+            border: 2px solid var(--text-color);
+            color: var(--text-color);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            background-color: var(--secondary-color);
+            outline: none;
+        }
+
+        button {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            background-color: var(--accent-color);
+            color: var(--tertiary-color);
+            border: 2px solid var(--text-color);
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: var(--text-color);
+            color: var(--tertiary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--secondary-color);
+            border-top: 4px solid var(--text-color);
+            font-size: 1rem;
+            z-index: 2;
+        }
+
+        .pixel-border {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 10px solid var(--text-color);
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px; /* Increased height for more coverage */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 24" fill="%23ffffff"><path d="M4 4h4v4H4zm4 0h4v4H8zm4 0h4v4h-4zm28 0h4v4h-4zm4 0h4v4h-4zm4 0h4v4h-4zM0 8h4v4H0zm8 0h4v4H8zm4 0h4v4h-4zm4 0h4v4h-4zm16 0h4v4h-4zm16 0h4v4h-4zM4 12h4v4H4zm4 0h4v4H8zm4 0h4v4h-4zm24 0h4v4h-4zm8 0h4v4h-4zM0 16h4v4H0zm8 0h4v4H8zm20 0h4v4h-4zm16 0h4v4h-4zm8 0h4v4h-4zM4 20h4v4H4zm36 0h4v4h-4z"/></svg>');
+            background-repeat: repeat-x;
+            animation: cloudMove 60s linear infinite;
+            opacity: 0.4; /* Increased transparency */
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes cloudMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 560px 0; }
+        }
+
+        .trees {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Increased height for more coverage */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%238bcb5e"><path d="M4 2v2H2v2h2v2H2v2h2v2H2v2h12V2z"/></svg>');
+            background-repeat: repeat-x;
+            background-size: 60px 100px; /* Adjusted size */
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pixel-border"></div>
+    <div class="clouds"></div>
+    <div class="trees"></div>
+
+    <header>
+        <div class="container">
+            <h1>Sayanth T M</h1>
+            <p>Tech Enthusiast & Developer</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Hello! I'm Sayanth T M, a tech enthusiast and developer with a passion for creating detailed and functional web applications. Currently pursuing a B.Tech degree, I enjoy blending creativity with technology in my projects.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <span class="skill-item">Cross-Platform Development</span>
+                    <span class="skill-item">Version Control</span>
+                    <span class="skill-item">Web Development</span>
+                    <span class="skill-item">3D Modeling</span>
+                    <span class="skill-item">Database Management</span>
+                    <span class="skill-item">Data Analytics</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Emo</h3>
+                        <p>A unique application focused on emotional analysis and support.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>BMI Calculator</h3>
+                        <p>A simple and effective tool to calculate and track BMI.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Medic</h3>
+                        <p>An app designed to manage medical information and appointments.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Say Hello!</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sayanth T M. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
